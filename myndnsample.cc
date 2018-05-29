@@ -3,6 +3,8 @@
 #include "ns3/ndnSIM-module.h"
 #include <string>
 
+const int DST_NUM = 8;
+
 namespace ns3 {
 
   int main(int argc, char* argv[])
@@ -22,14 +24,21 @@ namespace ns3 {
     ndn::GlobalRoutingHelper ndnGlobalRoutingHelper;
     ndnGlobalRoutingHelper.InstallAll();
 
+    //Getting containers for the consumer/producer
     Ptr<Node> consumer = Names::Find<Node>("Src1");
 
-    Ptr<Node> producer[8];
-    for (int i=0;i<8;i++)
+    Ptr<Node> producer[DST_NUM];
+    for (int i=0;i<DST_NUM;i++)
     {
       std::string name("Dst"+std::to_string(i+1));
       producer[i] = Names::Find<Node>(name);
     }
+
+    ndn::AppHelper consumerHelper("ns3::ndn::ConsumerCbr");
+    consumerHelper.SetAttribute("Frequency", StringValue("10"));
+    consumerHelper.SetAttribute("Randomize", StringValue("uniform"));
+
+
 
     Simulator::Stop(Seconds(20.0));
 
