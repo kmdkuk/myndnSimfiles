@@ -1,0 +1,40 @@
+#Topology.Scenario3.txt
+
+router
+
+# node  comment yPos  xPos
+Src1    NA      11    10
+Rtr1    NA      9     10
+Rtr2    NA      7     6
+Rtr3    NA      7     14
+Rtr4    NA      5     4
+Rtr5    NA      5     8
+Rtr6    NA      5     12
+Rtr7    NA      5     16
+Dst1    NA      3     3
+Dst2    NA      3     5
+Dst3    NA      3     7
+Dst4    NA      3     9
+Dst5    NA      3     11
+Dst6    NA      3     13
+Dst7    NA      3     15
+Dst8    NA      3     17
+
+link
+# srcNode   dstNode   bandwidth   metric    delay   queue
+Src1        Rtr1      1Gbps       1         10ms    10
+Rtr1        Rtr2      1Gbps       1         2ms     10
+Rtr1        Rtr3      1Gbps       1         2ms     10
+Rtr2        Rtr4      1Gbps       1         2ms     10
+Rtr2        Rtr5      1Gbps       1         2ms     10
+Rtr3        Rtr6      1Gbps       1         2ms     10
+Rtr3        Rtr7      1Gbps       1         2ms     10
+Rtr4        Dst1      1Gbps       1         2ms     10
+Rtr4        Dst2      1Gbps       1         2ms     10
+Rtr5        Dst3      1Gbps       1         2ms     10
+Rtr5        Dst4      1Gbps       1         2ms     10
+Rtr6        Dst5      1Gbps       1         2ms     10
+Rtr6        Dst6      1Gbps       1         2ms     10
+Rtr7        Dst7      1Gbps       1         2ms     10
+Rtr7        Dst8      1Gbps       1         2ms     10
+
